@@ -34,6 +34,11 @@ class MainApp extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
+              const ProfileAvatar(),
+
+              const SizedBox(height: 16),
+
+             
               
               const SizedBox(height: 24,),
               
@@ -80,8 +85,9 @@ class MainApp extends StatelessWidget {
                 ),
               ),
               const Divider(),
-              
-              ListView.builder(
+
+              Expanded(
+                child: ListView.builder(
                 itemCount: experiences.length,
                 itemBuilder: (context, index) {
                   return Card(
@@ -94,10 +100,24 @@ class MainApp extends StatelessWidget {
                   );
                 }
               ),
+              ),
+              
             ],
           ),
         ),
       ),
+    );
+  }
+}
+class ProfileAvatar extends StatelessWidget {
+  const ProfileAvatar ({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const CircleAvatar(
+      radius: 50,
+      backgroundColor: Colors.grey,
+      child: Icon(Icons.person, size: 50, color: Colors.white,),
     );
   }
 }
