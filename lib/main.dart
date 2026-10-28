@@ -38,7 +38,10 @@ class MainApp extends StatelessWidget {
 
               const SizedBox(height: 16),
 
-             
+              ProfileInfo(
+                userName: userName,
+                role:role,
+              ),
               
               const SizedBox(height: 24,),
               
@@ -121,11 +124,50 @@ class ProfileAvatar extends StatelessWidget {
     );
   }
 }
+class ProfileInfo extends StatelessWidget {
+  final String userName;
+  final String role;
+
+  const ProfileInfo({
+    super.key,
+    required this.userName,
+    required this.role,
+    });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          userName,
+          style: const TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+          ),
+          textAlign: TextAlign.center,
+        ),
+        const SizedBox(height: 8,),
+        Text(
+          role,
+          style: TextStyle(
+            fontSize: 16,
+            color: Colors.grey[700],
+          ),
+          textAlign: TextAlign.center,
+          ),
+      ],
+    );
+  }
+}
 class StatItem extends StatelessWidget {
   final String count;
   final String label;
 
-  const StatItem({super.key, required this.count, required this.label});
+  const StatItem({
+    super.key, 
+    required this.count, 
+    required this.label,
+    });
 
   @override
   Widget build(BuildContext context) {
