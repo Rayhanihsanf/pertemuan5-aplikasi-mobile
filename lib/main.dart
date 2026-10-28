@@ -57,27 +57,9 @@ class MainApp extends StatelessWidget {
                 label: const Text('Edit Profil'),
               ),
               const SizedBox(height: 24),
-              
-              Container(
-                padding: const EdgeInsets.symmetric(vertical: 12),
-                decoration: BoxDecoration(
-                  color: Colors.blue[50],
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const StatItem(count: '3', label: 'Proyek'),
-                    const SizedBox(height: 24),
-                    
-                    const StatItem(count: '497', label: 'Followers'),
-                    const SizedBox(width: 24), 
-                    
-                    const StatItem(count: '364', label: 'Following'),
-                    const SizedBox(width: 24),
-                  ],
-                ),
-              ),
+
+              const ProfileStats(),
+
               const SizedBox(height: 24),
               
               const Align(
@@ -159,6 +141,31 @@ class ProfileInfo extends StatelessWidget {
     );
   }
 }
+class ProfileStats extends StatelessWidget {
+  const ProfileStats({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        vertical: 12,
+        horizontal: 16,
+      ),
+      decoration: BoxDecoration(
+        color: Colors.blue[50],
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: const Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          StatItem(count: '3', label: 'Proyek'),
+          StatItem(count: '497', label: 'Followers'),
+          StatItem(count: '364', label: 'Following'),
+        ],
+      ),
+    );
+  }
+}
 class StatItem extends StatelessWidget {
   final String count;
   final String label;
@@ -172,6 +179,7 @@ class StatItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         Text(
           count,
