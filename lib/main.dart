@@ -184,7 +184,7 @@ class StatItem extends StatelessWidget {
         Text(
           count,
           style: const TextStyle(
-            fontSize: 20,
+            fontSize: 21,
             fontWeight: FontWeight.bold,
             color: Colors.blueAccent,
           ),
