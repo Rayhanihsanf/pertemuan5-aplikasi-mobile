@@ -25,6 +25,13 @@ class MainApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
+          actions: [IconButton(onPressed: (){
+
+          }, 
+          icon: const Icon(Icons.logout_outlined),
+          tooltip: 'Logout',
+          ),
+          ],
           title: const Text('Profil Pengguna'),
           centerTitle: true,
           backgroundColor: Colors.blueAccent,
@@ -184,7 +191,7 @@ class StatItem extends StatelessWidget {
         Text(
           count,
           style: const TextStyle(
-            fontSize: 21,
+            fontSize: 20,
             fontWeight: FontWeight.bold,
             color: Colors.blueAccent,
           ),
