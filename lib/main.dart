@@ -82,15 +82,10 @@ class MainApp extends StatelessWidget {
                 child: ListView.builder(
                 itemCount: experiences.length,
                 itemBuilder: (context, index) {
-                  return Card(
-                    elevation: 2,
-                    margin: const EdgeInsets.symmetric(vertical: 6),
-                    child: ListTile(
-                      leading: const Icon(Icons.work, color: Colors.blueAccent),
-                      title: Text(experiences[index]),
-                    ),
+                  return ExperienceCard(
+                    experience: experiences[index],
                   );
-                }
+                  },
               ),
               ),
               
@@ -176,6 +171,41 @@ class ProfileStats extends StatelessWidget {
           StatItem(count: '497', label: 'Followers'),
           StatItem(count: '364', label: 'Following'),
         ],
+      ),
+    );
+  }
+}
+class ExperienceCard extends StatelessWidget {
+  final String experience;
+
+  const ExperienceCard({
+    super.key,
+    required this.experience,
+    });
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 3,
+      margin: const EdgeInsets.symmetric(
+        vertical: 6,
+        horizontal: 4,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListTile(
+          leading: const Icon(Icons.work,
+          color: Colors.blueAccent,
+          size: 30,
+          ),
+          title: Text(
+            experience,
+            style: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
       ),
     );
   }
