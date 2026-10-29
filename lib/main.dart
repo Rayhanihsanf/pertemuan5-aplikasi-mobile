@@ -97,6 +97,13 @@ class MainApp extends StatelessWidget {
             ],
           ),
         ),
+        floatingActionButton: FloatingActionButton(onPressed: (){
+
+        },
+        mini: true,
+        child: Icon(Icons.add),
+        tooltip: 'Add Experience',
+        ),
       ),
     );
   }
