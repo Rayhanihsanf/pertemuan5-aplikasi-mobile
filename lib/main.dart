@@ -4,7 +4,6 @@ void main() {
   runApp(const MainApp());
 }
 
-// MaterialApp dipisah dari halaman agar context dialog valid
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
@@ -29,7 +28,6 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  // Tidak lagi final, supaya bisa diubah lewat setState()
   String userName = 'Rayhan Ihsan Fadhilah';
   final String role = 'Shofware Enginering & Mahasiswa';
 
@@ -152,8 +150,6 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 }
-
-// ===== Widget lain tidak berubah =====
 
 class ProfileAvatar extends StatelessWidget {
   const ProfileAvatar({super.key});
